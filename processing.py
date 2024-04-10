@@ -6,6 +6,7 @@ import sklearn.model_selection
 import sklearn.preprocessing
 import sklearn.utils
 
+def datafy():
 def extract(struc):
     # Exctracting Proteins as Strings
     grp = open(os.path.join("prot_txt",struc+".txt")).read()
