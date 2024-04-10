@@ -63,7 +63,6 @@ for feat,lab in training_data:
     y.append(lab)
 
 # Padding X
-
 for prot in range(len(x)):
     temp = np.zeros((23000,),dtype="int32")
     shape = x[prot].shape
@@ -71,6 +70,7 @@ for prot in range(len(x)):
     x[prot] = temp
 
 
+# Splitting Test Data
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x,y,test_size=0.1)
 
 x_train = np.array(x_train)
