@@ -1,9 +1,9 @@
 import tensorflow as tf
 import pickle
-
+import processing
 
 while True:
-    from processing import x_train, x_test, y_train, y_test
+    x_train, x_test, y_train, y_test = processing.datafy()
     print(x_train[0])
     model = tf.keras.Sequential()
 
