@@ -19,7 +19,7 @@ while True:
     model.fit(x_train, y_train, epochs=10)
     val_loss, val_acc = model.evaluate(x_test,y_test)
     print(val_acc)
-    if val_acc >= 0.85:
+    if val_acc >= 0.8:
         break
 
 print(val_acc)
