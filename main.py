@@ -1,16 +1,16 @@
 import tensorflow as tf
 import processing
+import numpy as np
 
 model = tf.keras.models.load_model("model.keras")
 
-x_train, x_test, y_train, y_test = processing.datafy()
+# x_train, x_test, y_train, y_test = processing.datafy()
 
-val_loss, val_acc = model.evaluate(x_test,y_test)
+# val_loss, val_acc = model.evaluate(x_test,y_test)
 
-print(val_acc)
+# print(val_acc)
 
-def ProStReM(protein):
-
+def ProStReM(protein, model):
     # Converting Protein String to Array
     protein = list(protein)
 
@@ -22,6 +22,26 @@ def ProStReM(protein):
     except:
         return "invalid input"
     
-    
+    protein = np.array(protein)
 
-    
+    # Padding
+    shape = protein.shape
+    temp = np.zeros((23000,), dtype="int32")
+    temp[:shape[0],] = protein
+    protein = temp
+
+    # Predict
+    prediction = model.predict(np.array([protein]))
+
+    return prediction
+
+prot = input("Paste the protein sequence: ")
+
+result = ProStReM(prot,model)
+print(result)
+if result[0][0] >= 0.5:
+    result = "Globular"
+else:
+    result = "Fibrous"
+
+print(result)
