@@ -24,4 +24,4 @@ while True:
 
 print(val_acc)
 
-model.save("model")
+model.save("model.keras")
