@@ -24,6 +24,4 @@ while True:
 
 print(val_acc)
 
-pickle_out = open("model.pickle", "wb")
-pickle.dump(model, pickle_out)
-pickle_out.close()
+model.save("model")
