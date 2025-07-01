@@ -13,4 +13,4 @@ ProStreM is a neural network which determines a protein's structural class from 
 8. Insert the proteins sequence in capital letters.
 
 ## Contact
-For contact reach me at: osamaradi@assure5.com
+For contact reach me at: osama.radi@yale.edu
